@@ -595,35 +595,35 @@ var NavigatorIOS = React.createClass({
       this.state.updatingAllIndicesAtOrBeyond >= i;
 
     return (
-      <StaticContainer key={'nav' + i} shouldUpdate={shouldUpdateChild}>
-        <RCTNavigatorItem
-          title={route.title}
-          style={[
-            styles.stackItem,
-            this.props.itemWrapperStyle,
-            route.wrapperStyle
-          ]}
-          backButtonIcon={this._imageNameFromSource(route.backButtonIcon)}
-          backButtonTitle={route.backButtonTitle}
-          leftButtonIcon={this._imageNameFromSource(route.leftButtonIcon)}
-          leftButtonTitle={route.leftButtonTitle}
-          onNavLeftButtonTap={route.onLeftButtonPress}
-          rightButtonIcon={this._imageNameFromSource(route.rightButtonIcon)}
-          rightButtonTitle={route.rightButtonTitle}
-          onNavRightButtonTap={route.onRightButtonPress}
-          navigationBarHidden={this.props.navigationBarHidden}
-          shadowHidden={this.props.shadowHidden}
-          tintColor={this.props.tintColor}
-          barTintColor={this.props.barTintColor}
-          translucent={this.props.translucent !== false}
-          titleTextColor={this.props.titleTextColor}>
+      <RCTNavigatorItem
+        title={route.title}
+        style={[
+          styles.stackItem,
+          this.props.itemWrapperStyle,
+          route.wrapperStyle
+        ]}
+        backButtonIcon={this._imageNameFromSource(route.backButtonIcon)}
+        backButtonTitle={route.backButtonTitle}
+        leftButtonIcon={this._imageNameFromSource(route.leftButtonIcon)}
+        leftButtonTitle={route.leftButtonTitle}
+        onNavLeftButtonTap={route.onLeftButtonPress}
+        rightButtonIcon={this._imageNameFromSource(route.rightButtonIcon)}
+        rightButtonTitle={route.rightButtonTitle}
+        onNavRightButtonTap={route.onRightButtonPress}
+        navigationBarHidden={this.props.navigationBarHidden}
+        shadowHidden={this.props.shadowHidden}
+        tintColor={this.props.tintColor}
+        barTintColor={this.props.barTintColor}
+        translucent={this.props.translucent !== false}
+        titleTextColor={this.props.titleTextColor}>
+        <StaticContainer key={'nav' + i} shouldUpdate={shouldUpdateChild}>
           <Component
             navigator={this.navigator}
             route={route}
             {...route.passProps}
           />
-        </RCTNavigatorItem>
-      </StaticContainer>
+        </StaticContainer>
+      </RCTNavigatorItem>
     );
   },
 
