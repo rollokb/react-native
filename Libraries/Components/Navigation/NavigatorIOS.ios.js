@@ -595,7 +595,7 @@ var NavigatorIOS = React.createClass({
       this.state.updatingAllIndicesAtOrBeyond >= i;
 
     return (
-      <StaticContainer key={'nav' + i} shouldUpdate={shouldUpdateChild}>
+      <StaticContainer key={'nav' + i} shouldUpdate={true}>
         <RCTNavigatorItem
           title={route.title}
           style={[
